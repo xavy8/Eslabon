@@ -1,0 +1,76 @@
+<h4 class="text-primary">Cambiar contraseña</h4>
+<hr>
+<form [formGroup]="cambio" (ngSubmit)="Guardar()" novalidate="novalidate" autocomplete="off">
+
+  <div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Usuario</label>
+      <div class="col-8">
+        <input
+            class="form-control"
+            type="text"
+            placeholder="Usuario"
+            formControlName="usuario"
+        >
+        <small *ngIf="cambio.get('usuario').hasError('minlength')" class="text-danger">Ingrese mínimo 7 caracteres.</small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Contraseña</label>
+        <div class="col-8">
+          <input
+              class="form-control"
+              type="password"
+              placeholder="Contraseña"
+              formControlName="contrasenaAnterior"
+          >
+          <small *ngIf="cambio.get('contrasena').hasError('minlength')" class="text-danger">Ingrese mínimo 10 caracteres.</small>
+        </div>
+      </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Nueva Contraseña</label>
+      <div class="col-8">
+        <input
+            class="form-control"
+            type="password"
+            placeholder="Contraseña"
+            formControlName="contrasena"
+        >
+        <small *ngIf="cambio.get('contrasena').hasError('minlength')" class="text-danger">Ingrese mínimo 10 caracteres.</small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Confirmar</label>
+        <div class="col-8">
+            <input
+                class="form-control"
+                type="password"
+                placeholder="Confirmar contraseña"
+                formControlName="confirmar"
+            >
+            <small *ngIf="cambio.get('confirmar').hasError('minlength')" class="text-danger">Ingrese mínimo 10 caracteres.</small>
+            <small *ngIf="cambio.get('confirmar').value && cambio.get('confirmar').hasError('noMatch')" class="text-danger">La confirmación no coincide con la contraseña.</small>
+            <small *ngIf="mensaje" class="text-danger"> {{ mensaje }} </small>
+        </div>
+    </div>
+
+  </div>
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">&nbsp;</label>
+    <div class="input-group col-md-8">
+      <button [disabled]="cambio.invalid" type="submit" class="btn btn-outline-primary btn-block">
+        Cambiar contraseña
+      </button>
+      <button type="button" routerLink="/login" class="btn btn-outline-danger btn-block">
+        Cancelar
+      </button>
+    </div>
+  </div>
+
+</form>
+

@@ -1,0 +1,106 @@
+<div>
+  <h4 class="text-primary">Información de usuarios</h4>
+  <hr>
+  
+  <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col" *ngFor="let header of headers">
+              {{ header.text }}
+          </th>
+          <th>Editar</th>
+          <th>Activar/Desactivar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of usuarios">
+          <td *ngFor = "let header of headers">
+              {{ (header.value === 'estatus' ) ? ((usuario.estatus) ? 'Activo' : 'Inactivo') : usuario[header.value] }}
+          </td>
+          <td class="text-center">
+              <i class="fa fa-edit fa-activo" data-toggle="modal" data-target="#myModal" (click)="AbrirModal( usuario )"></i>
+          </td>
+          <td class="text-center">
+              <i [class]="(usuario.estatus) ? 'fa fa-check-circle fa-activo' : 'fa fa-ban fa-inactivo'" (click)="DesActivar(usuario.id)"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+<div *ngIf="usuarioActualizar && showModal" id="myModal" class="modal" [ngClass]="{'show': showModal}">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+          <h4 class="text-primary">Actualizar usuario</h4>
+          <hr>
+      </div>
+      <div class="modal-body">
+          <form [formGroup]="actualizar" (ngSubmit)="Actualizar()" novalidate="novalidate" autocomplete="off">
+
+              <div>
+            
+                <div class="form-group row">
+                  <label class="col-2 col-form-label">Usuario</label>
+                  <div class="col-8">
+                    <input
+                        class="form-control"
+                        type="text"
+                        placeholder="Usuario"
+                        formControlName="usuario"
+                    >
+                    <small *ngIf="actualizar.get('usuario').value && actualizar.get('usuario').hasError('minlength')" class="text-danger">Ingrese mínimo 7 caracteres.</small>
+                  </div>
+                </div>
+            
+                <div class="form-group row">
+                    <label class="col-2 col-form-label">Correo</label>
+                    <div class="col-8">
+            
+                    <input
+                        class="form-control"
+                        type="email"
+                        placeholder="Correo electrónico"
+                        formControlName="correo"
+                    >
+                    <small *ngIf="actualizar.get('correo').value && actualizar.get('correo').value && actualizar.get('correo').invalid" class="text-danger">Formato de correo incorrecto.</small>
+                    </div>
+                </div>
+            
+                <div class="form-group row">
+                  <label class="col-2 col-form-label">Sexo</label>
+                  <div class="col-8">
+                    <select class="form-control"
+                            name="sexo"
+                            formControlName="sexo">
+                      <option  *ngFor="let genero of generos" 
+                                [value]="genero.value">
+                        {{ genero.text }}
+                      </option>
+                    </select>
+                    <small *ngIf="!actualizar.get('sexo').value && actualizar.get('sexo').touched" class="text-danger">Campo requerido.</small>
+                  </div>
+                </div>
+            
+              </div>
+            
+              <div class="form-group row">
+                <label class="col-2 col-form-label">&nbsp;</label>
+                <div class="input-group col-md-8">
+                  <button [disabled]="actualizar.invalid" type="submit" class="btn btn-outline-primary btn-block">
+                    Actualizar
+                  </button>
+                  <button id="close" type="button" (click)="showModal = false" data-dismiss="modal" class="btn btn-outline-danger btn-block">
+                    Cancelar
+                  </button>
+                </div>
+              </div>
+            
+            </form>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,14 @@
+C:\Users\luperez\Documents\Angular\Eslabon\WSAPIEslabon\WSAPIEslabon.Datos\bin\Debug\netcoreapp2.2\WSAPIEslabon.Datos.deps.json
+C:\Users\luperez\Documents\Angular\Eslabon\WSAPIEslabon\WSAPIEslabon.Datos\bin\Debug\netcoreapp2.2\WSAPIEslabon.Datos.runtimeconfig.json
+C:\Users\luperez\Documents\Angular\Eslabon\WSAPIEslabon\WSAPIEslabon.Datos\bin\Debug\netcoreapp2.2\WSAPIEslabon.Datos.runtimeconfig.dev.json
+C:\Users\luperez\Documents\Angular\Eslabon\WSAPIEslabon\WSAPIEslabon.Datos\bin\Debug\netcoreapp2.2\WSAPIEslabon.Datos.dll
+C:\Users\luperez\Documents\Angular\Eslabon\WSAPIEslabon\WSAPIEslabon.Datos\bin\Debug\netcoreapp2.2\WSAPIEslabon.Datos.pdb
+C:\Users\luperez\Documents\Angular\Eslabon\WSAPIEslabon\WSAPIEslabon.Datos\bin\Debug\netcoreapp2.2\WSAPIEslabon.Entidades.dll
+C:\Users\luperez\Documents\Angular\Eslabon\WSAPIEslabon\WSAPIEslabon.Datos\bin\Debug\netcoreapp2.2\WSAPIEslabon.Entidades.pdb
+C:\Users\luperez\Documents\Angular\Eslabon\WSAPIEslabon\WSAPIEslabon.Datos\obj\Debug\netcoreapp2.2\WSAPIEslabon.Datos.csprojAssemblyReference.cache
+C:\Users\luperez\Documents\Angular\Eslabon\WSAPIEslabon\WSAPIEslabon.Datos\obj\Debug\netcoreapp2.2\WSAPIEslabon.Datos.csproj.CoreCompileInputs.cache
+C:\Users\luperez\Documents\Angular\Eslabon\WSAPIEslabon\WSAPIEslabon.Datos\obj\Debug\netcoreapp2.2\WSAPIEslabon.Datos.AssemblyInfoInputs.cache
+C:\Users\luperez\Documents\Angular\Eslabon\WSAPIEslabon\WSAPIEslabon.Datos\obj\Debug\netcoreapp2.2\WSAPIEslabon.Datos.AssemblyInfo.cs
+C:\Users\luperez\Documents\Angular\Eslabon\WSAPIEslabon\WSAPIEslabon.Datos\obj\Debug\netcoreapp2.2\WSAPIEslabon.Datos.csproj.CopyComplete
+C:\Users\luperez\Documents\Angular\Eslabon\WSAPIEslabon\WSAPIEslabon.Datos\obj\Debug\netcoreapp2.2\WSAPIEslabon.Datos.dll
+C:\Users\luperez\Documents\Angular\Eslabon\WSAPIEslabon\WSAPIEslabon.Datos\obj\Debug\netcoreapp2.2\WSAPIEslabon.Datos.pdb

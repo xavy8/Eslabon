@@ -1,0 +1,92 @@
+<h4 class="text-primary">Registro</h4>
+<hr>
+<form [formGroup]="registro" (ngSubmit)="Guardar()" novalidate="novalidate" autocomplete="off">
+
+  <div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Usuario</label>
+      <div class="col-8">
+        <input
+            class="form-control"
+            type="text"
+            placeholder="Usuario"
+            formControlName="usuario"
+        >
+        <small *ngIf="registro.get('usuario').hasError('minlength')" class="text-danger">Ingrese mínimo 7 caracteres.</small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Correo</label>
+        <div class="col-8">
+
+        <input
+            class="form-control"
+            type="email"
+            placeholder="Correo electrónico"
+            formControlName="correo"
+        >
+        <small *ngIf="registro.get('correo').value && registro.get('correo').invalid" class="text-danger">Formato de correo incorrecto.</small>
+        </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Contraseña</label>
+      <div class="col-8">
+        <input
+            class="form-control"
+            type="password"
+            placeholder="Contraseña"
+            formControlName="contrasena"
+        >
+        <small *ngIf="registro.get('contrasena').hasError('minlength')" class="text-danger">Ingrese mínimo 10 caracteres.</small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Confirmar</label>
+        <div class="col-8">
+            <input
+                class="form-control"
+                type="password"
+                placeholder="Confirmar contraseña"
+                formControlName="confirmar"
+            >
+            <small *ngIf="registro.get('confirmar').hasError('minlength')" class="text-danger">Ingrese mínimo 10 caracteres.</small>
+            <small *ngIf="registro.get('confirmar').value && registro.get('confirmar').hasError('noMatch')" class="text-danger">La confirmación no coincide con la contraseña.</small>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Sexo</label>
+        <div class="col-8">
+          <select class="form-control"
+                  name="sexo"
+                  formControlName="sexo">
+            <option  *ngFor="let genero of generos" 
+                     [value]="genero.value">
+              {{ genero.text }}
+            </option>
+          </select>
+          <small *ngIf="!registro.get('sexo').value && registro.get('sexo').touched" class="text-danger">Campo requerido.</small>
+          <small *ngIf="mensaje" class="text-danger">{{ mensaje }}</small>
+        </div>
+      </div>
+
+  </div>
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">&nbsp;</label>
+    <div class="input-group col-md-8">
+      <button [disabled]="registro.invalid" type="submit" class="btn btn-outline-primary btn-block">
+        Registrar
+      </button>
+      <button type="button" routerLink="/login" class="btn btn-outline-danger btn-block">
+        Cancelar
+      </button>
+    </div>
+  </div>
+
+</form>
+
