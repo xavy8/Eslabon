@@ -39,7 +39,8 @@
             placeholder="Contraseña"
             formControlName="contrasena"
         >
-        <small *ngIf="cambio.get('contrasena').hasError('minlength')" class="text-danger">Ingrese mínimo 10 caracteres.</small>
+        <small *ngIf="cambio.get('contrasena').hasError('minlength')" class="text-danger">Ingrese mínimo 10 caracteres. </small>
+        <small *ngIf="!cambio.get('contrasena').hasError('minlength') && cambio.get('contrasena').value && cambio.get('contrasena').invalid" class="text-danger">Se necesita mínimo una mayúscula, una minúscula y un número.</small>
       </div>
     </div>
 

@@ -33,7 +33,7 @@ export class CambiocontrasenaComponent implements OnInit {
     this.cambio = this.fb.group({
       usuario: ['', [Validators.required, Validators.minLength(7)]],
       contrasenaAnterior: ['', [Validators.required, Validators.minLength(10)]],
-      contrasena: ['', [Validators.required, Validators.minLength(10)]],
+      contrasena: ['', [Validators.required, Validators.minLength(10), Validators.pattern('^(?=\\w*\\d)(?=\\w*[A-Z])(?=\\w*[a-z])\\S{10,}$')]],
       confirmar: ['', [Validators.required, Validators.minLength(10), MyValidators.checkPass]],
     });
   }
