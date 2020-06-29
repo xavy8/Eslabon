@@ -33,7 +33,7 @@ export class RegistroComponent implements OnInit {
     this.registro = this.fb.group({
       usuario: ['', [Validators.required, Validators.minLength(7)]],
       correo: ['', [Validators.required, Validators.email, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
-      contrasena: ['', [Validators.required, Validators.minLength(10)]],
+      contrasena: ['', [Validators.required, Validators.minLength(10), Validators.pattern('^(?=\\w*\\d)(?=\\w*[A-Z])(?=\\w*[a-z])\\S{10,}$')]],
       confirmar: ['', [Validators.required, Validators.minLength(10), MyValidators.checkPass]],
       sexo: ['', [Validators.required]]
     });

@@ -40,7 +40,8 @@
             placeholder="Contraseña"
             formControlName="contrasena"
         >
-        <small *ngIf="registro.get('contrasena').hasError('minlength')" class="text-danger">Ingrese mínimo 10 caracteres.</small>
+        <small *ngIf="registro.get('contrasena').hasError('minlength')" class="text-danger">Ingrese mínimo 10 caracteres. </small>
+        <small *ngIf="!registro.get('contrasena').hasError('minlength') && registro.get('contrasena').value && registro.get('contrasena').invalid" class="text-danger">Se necesita mínimo una mayúscula, una minúscula y un número.</small>
       </div>
     </div>
 
